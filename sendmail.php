@@ -6,21 +6,21 @@
 	require 'phpmailer/src/PHPMailer.php';
 
 	$mail = new PHPMailer(true);
-	$mail->Charset = 'UTF-8';
+	$mail->CharSet = 'UTF-8';
 	$mail->setLanguage('ru', 'phpmailer/language/');
 	$mail->IsHTML(true);
 
 	//От кого письмо
-	$mail->setFrom('info@arslan.guru', 'Arslan Ramazanov');
+	$mail->setFrom('coolox@gmail.com', 'Arslan Ramazanov');
 	//Кому отправить
-	$mail->addAddress ('coolox@gmail.com');
+	$mail->addAddress('coolox@gmail.com');
 	//Тема письма
-	$mail->Subject = 'Привет! Это "Arslan"';
+	$mail->Subject = 'Привет! Это Arslan';
 
-	//Рука
+	 //Рука
 	$hand = "Правая";
 	if ($_POST['hand'] == "left"){
-		$hand = "Левая"
+		$hand = "Левая";
 	}
 
 	//Тело письма
@@ -54,11 +54,11 @@
 		}
 	}
 
-	$mail->Body = $hody;
+	$mail->Body = $body;
 
 	//Отправляем
 	if (!$mail->send()) {
-		$message = "Ошибка"
+		$message = "Ошибка";
 	} else {
 		$message = "Данные отправлены!";
 	}
